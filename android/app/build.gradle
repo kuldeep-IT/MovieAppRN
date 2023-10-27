@@ -1,6 +1,12 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+project.ext.vectoricons = [
+        iconFontNames: [ 'Poppins.ttf','MaterialIcons.ttf', 'FontAwesome.ttf', 'MaterialCommunityIcons.ttf', 'Ionicons.ttf' ] // Name of the font files you want to copy
+]
+
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
 
 
 /**
@@ -108,7 +114,7 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
+    implementation project(':react-native-vector-icons')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.squareup.okhttp3', module:'okhttp'
