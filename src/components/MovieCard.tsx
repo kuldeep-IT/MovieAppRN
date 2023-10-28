@@ -94,7 +94,6 @@ const MovieCard = (props: any) => {
 
                 <View style={styles.genreMain}>
                     {props.genres.map((item: any, index: any) => {
-                        x
                         return (
                             <View key={item} style={styles.genreMain}>
                                 <Text style={styles.genreText}>{genres[item]}</Text>
